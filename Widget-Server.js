@@ -98,7 +98,7 @@ function getPayPalToken() {
 		sm.setRequestHeader("Accept","application/json");
 		sm.setRequestHeader("Accept-Language", "en_US");
 		//@setBasicAuth: values are coming from the PayPal App: Client ID,Secret
-		sm.setBasicAuth("AbKNTbZreJ1QFxsIE8TlAdUilur2nKudoVFuS3Gt0ReMaMD9JCLOgXPXx52cqPK7pw3GqbEAnHfrDzD0","EEiT1gs3A8_5RYtVqOv4RaxuD6hDQ_Y6Ueppe3ykgafreuzPnI6RGvUFys0LWskQIzyY8i1d22FSwC21");
+		sm.setBasicAuth("AUygyS-gcfckzMLXpEHNwLNZXNXxJiOSRPw_Y53bRhR0rNUjYe8JY1UGt1bR2_cCG3Sp4Y_R8VKofGOg","EEhkwSp0qbFEOt7vOaqUSN6aLiD6dXih6rI0nE4e63XbVeVNsQv6V3vCeG9-KQXj5ySAAlfjShv4PV9b");
 		sm.setRequestBody("grant_type=client_credentials");
 
 		var response = sm.execute();
