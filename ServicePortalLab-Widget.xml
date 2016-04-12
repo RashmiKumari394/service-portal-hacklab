@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<unload unload_date="2016-04-12 22:00:12">
+<unload unload_date="2016-04-12 22:29:05">
 <sys_remote_update_set action="INSERT_OR_UPDATE">
 <application display_value="Global">global</application>
 <application_name>Global</application_name>
@@ -18,11 +18,11 @@
 <summary/>
 <sys_class_name>sys_remote_update_set</sys_class_name>
 <sys_created_by>frank.schuster</sys_created_by>
-<sys_created_on>2016-04-12 22:00:12</sys_created_on>
-<sys_id>346725304f361200c664c0818110c745</sys_id>
+<sys_created_on>2016-04-12 22:29:05</sys_created_on>
+<sys_id>b7fd65704f361200c664c0818110c7aa</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_updated_by>frank.schuster</sys_updated_by>
-<sys_updated_on>2016-04-12 22:00:12</sys_updated_on>
+<sys_updated_on>2016-04-12 22:29:05</sys_updated_on>
 <update_set display_value=""/>
 <update_source display_value=""/>
 <updated/>
@@ -32,60 +32,16 @@
 <application display_value="Global">global</application>
 <category>customer</category>
 <comments/>
-<name>sp_instance_5b3ff950d7000200a9ad1e173e24d4dd</name>
-<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>0</order><short_description/><size>md</size><sp_column display_value="1">493ff950d7000200a9ad1e173e24d4be</sp_column><sp_widget display_value="Barcode">12b8f3d3d7033100a9ad1e173e24d406</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-11 21:23:55</sys_created_on><sys_customer_update>true</sys_customer_update><sys_id>5b3ff950d7000200a9ad1e173e24d4dd</sys_id><sys_mod_count>4</sys_mod_count><sys_name>Barcode</sys_name><sys_package display_value="Service Portal - Core" source="com.glide.service-portal">c1e598f84fb21200c664c0818110c74b</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_instance_5b3ff950d7000200a9ad1e173e24d4dd</sys_update_name><sys_updated_by>frank.schuster</sys_updated_by><sys_updated_on>2016-04-12 17:46:45</sys_updated_on><title>Barcode</title><url/><widget_parameters/></sp_instance></record_update>]]></payload>
-<remote_update_set display_value="Service Portal PayPal HackLab #2 - Widget">346725304f361200c664c0818110c745</remote_update_set>
-<replace_on_upgrade>false</replace_on_upgrade>
-<sys_created_by>frank.schuster</sys_created_by>
-<sys_created_on>2016-04-12 22:00:12</sys_created_on>
-<sys_id>386725304f361200c664c0818110c745</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_updated_by>frank.schuster</sys_updated_by>
-<sys_updated_on>2016-04-12 22:00:12</sys_updated_on>
-<table/>
-<target_name>Barcode</target_name>
-<type>Instance</type>
-<update_domain>global</update_domain>
-<update_set display_value=""/>
-<view/>
-</sys_update_xml>
-<sys_update_xml action="INSERT_OR_UPDATE">
-<action>INSERT_OR_UPDATE</action>
-<application display_value="Global">global</application>
-<category>customer</category>
-<comments/>
-<name>sp_instance_ba4e2cf44ff21200c664c0818110c780</name>
-<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>3</order><short_description/><size>md</size><sp_column display_value="2">a77f3d50d7000200a9ad1e173e24d488</sp_column><sp_widget display_value="PayPal Payment">ebc86cb44ff21200c664c0818110c719</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>frank.schuster</sys_created_by><sys_created_on>2016-04-12 17:50:45</sys_created_on><sys_customer_update>true</sys_customer_update><sys_id>ba4e2cf44ff21200c664c0818110c780</sys_id><sys_mod_count>1</sys_mod_count><sys_name>PayPal Payment</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_instance_ba4e2cf44ff21200c664c0818110c780</sys_update_name><sys_updated_by>frank.schuster</sys_updated_by><sys_updated_on>2016-04-12 17:51:19</sys_updated_on><title>PayPal Payment</title><url/><widget_parameters/></sp_instance></record_update>]]></payload>
-<remote_update_set display_value="Service Portal PayPal HackLab #2 - Widget">346725304f361200c664c0818110c745</remote_update_set>
-<replace_on_upgrade>false</replace_on_upgrade>
-<sys_created_by>frank.schuster</sys_created_by>
-<sys_created_on>2016-04-12 22:00:12</sys_created_on>
-<sys_id>786725304f361200c664c0818110c745</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_updated_by>frank.schuster</sys_updated_by>
-<sys_updated_on>2016-04-12 22:00:12</sys_updated_on>
-<table/>
-<target_name>PayPal Payment</target_name>
-<type>Instance</type>
-<update_domain>global</update_domain>
-<update_set display_value=""/>
-<view/>
-</sys_update_xml>
-<sys_update_xml action="INSERT_OR_UPDATE">
-<action>INSERT_OR_UPDATE</action>
-<application display_value="Global">global</application>
-<category>customer</category>
-<comments/>
 <name>sp_instance_29af3d50d7000200a9ad1e173e24d4d7</name>
 <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>primary</color><css/><glyph/><id/><order>4</order><short_description/><size>md</size><sp_column display_value="2">a77f3d50d7000200a9ad1e173e24d488</sp_column><sp_widget display_value="Ticket Location">2795e5e2ff123100ba13ffffffffff84</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-11 21:25:25</sys_created_on><sys_customer_update>true</sys_customer_update><sys_id>29af3d50d7000200a9ad1e173e24d4d7</sys_id><sys_mod_count>6</sys_mod_count><sys_name>Location</sys_name><sys_package display_value="Service Portal - Core" source="com.glide.service-portal">c1e598f84fb21200c664c0818110c74b</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_instance_29af3d50d7000200a9ad1e173e24d4d7</sys_update_name><sys_updated_by>frank.schuster</sys_updated_by><sys_updated_on>2016-04-12 17:51:25</sys_updated_on><title>Location</title><url/><widget_parameters/></sp_instance></record_update>]]></payload>
-<remote_update_set display_value="Service Portal PayPal HackLab #2 - Widget">346725304f361200c664c0818110c745</remote_update_set>
+<remote_update_set display_value="Service Portal PayPal HackLab #2 - Widget">b7fd65704f361200c664c0818110c7aa</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>frank.schuster</sys_created_by>
-<sys_created_on>2016-04-12 22:00:12</sys_created_on>
-<sys_id>b46725304f361200c664c0818110c745</sys_id>
+<sys_created_on>2016-04-12 22:29:05</sys_created_on>
+<sys_id>3bfd65704f361200c664c0818110c7aa</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_updated_by>frank.schuster</sys_updated_by>
-<sys_updated_on>2016-04-12 22:00:12</sys_updated_on>
+<sys_updated_on>2016-04-12 22:29:05</sys_updated_on>
 <table/>
 <target_name>Location</target_name>
 <type>Instance</type>
@@ -249,7 +205,7 @@ function getPayPalToken() {
 		var message = ex.getMessage();
 		gs.log("** Caught an exception within the PayPal token block: " + message);
 	}
-}]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;frank.schuster&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-04-12 17:26:46&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;ebc86cb44ff21200c664c0818110c719&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_name&gt;PayPal Payment&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_ebc86cb44ff21200c664c0818110c719&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;frank.schuster&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-04-12 18:56:51&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;!-- only show the payment modal when the stage is "Payment requested" (payment_requested) - value is set in the server script --&gt;
+}]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;frank.schuster&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-04-12 17:26:46&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;ebc86cb44ff21200c664c0818110c719&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_name&gt;PayPal Payment&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_ebc86cb44ff21200c664c0818110c719&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;frank.schuster&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-04-12 22:28:41&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;!-- only show the payment widget when the stage is "Payment requested" (payment_requested) - value is set in the server script --&gt;
 &lt;div ng-if="data.showPayment" ng-controller="paypalController"&gt; 
   &lt;div class="panel b" &gt;
     &lt;div class="panel-heading bg-primary"&gt;
@@ -369,14 +325,14 @@ function getPayPalToken() {
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
-<remote_update_set display_value="Service Portal PayPal HackLab #2 - Widget">346725304f361200c664c0818110c745</remote_update_set>
+<remote_update_set display_value="Service Portal PayPal HackLab #2 - Widget">b7fd65704f361200c664c0818110c7aa</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>frank.schuster</sys_created_by>
-<sys_created_on>2016-04-12 22:00:12</sys_created_on>
-<sys_id>b86725304f361200c664c0818110c745</sys_id>
+<sys_created_on>2016-04-12 22:29:05</sys_created_on>
+<sys_id>3ffd65704f361200c664c0818110c7aa</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_updated_by>frank.schuster</sys_updated_by>
-<sys_updated_on>2016-04-12 22:00:12</sys_updated_on>
+<sys_updated_on>2016-04-12 22:29:05</sys_updated_on>
 <table/>
 <target_name>PayPal Payment</target_name>
 <type>Widget</type>
@@ -391,16 +347,60 @@ function getPayPalToken() {
 <comments/>
 <name>sp_instance_47af3d50d7000200a9ad1e173e24d4f6</name>
 <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>primary</color><css/><glyph/><id/><order>5</order><short_description/><size>md</size><sp_column display_value="2">a77f3d50d7000200a9ad1e173e24d488</sp_column><sp_widget display_value="Ticket Attachments">9ee37281d7033100a9ad1e173e24d457</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-11 21:25:32</sys_created_on><sys_customer_update>true</sys_customer_update><sys_id>47af3d50d7000200a9ad1e173e24d4f6</sys_id><sys_mod_count>6</sys_mod_count><sys_name>Attachments</sys_name><sys_package display_value="Service Portal - Core" source="com.glide.service-portal">c1e598f84fb21200c664c0818110c74b</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_instance_47af3d50d7000200a9ad1e173e24d4f6</sys_update_name><sys_updated_by>frank.schuster</sys_updated_by><sys_updated_on>2016-04-12 17:51:30</sys_updated_on><title>Attachments</title><url/><widget_parameters/></sp_instance></record_update>]]></payload>
-<remote_update_set display_value="Service Portal PayPal HackLab #2 - Widget">346725304f361200c664c0818110c745</remote_update_set>
+<remote_update_set display_value="Service Portal PayPal HackLab #2 - Widget">b7fd65704f361200c664c0818110c7aa</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>frank.schuster</sys_created_by>
-<sys_created_on>2016-04-12 22:00:12</sys_created_on>
-<sys_id>f46725304f361200c664c0818110c745</sys_id>
+<sys_created_on>2016-04-12 22:29:05</sys_created_on>
+<sys_id>7bfd65704f361200c664c0818110c7aa</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_updated_by>frank.schuster</sys_updated_by>
-<sys_updated_on>2016-04-12 22:00:12</sys_updated_on>
+<sys_updated_on>2016-04-12 22:29:05</sys_updated_on>
 <table/>
 <target_name>Attachments</target_name>
+<type>Instance</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_instance_5b3ff950d7000200a9ad1e173e24d4dd</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>0</order><short_description/><size>md</size><sp_column display_value="1">493ff950d7000200a9ad1e173e24d4be</sp_column><sp_widget display_value="Barcode">12b8f3d3d7033100a9ad1e173e24d406</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2015-05-11 21:23:55</sys_created_on><sys_customer_update>true</sys_customer_update><sys_id>5b3ff950d7000200a9ad1e173e24d4dd</sys_id><sys_mod_count>4</sys_mod_count><sys_name>Barcode</sys_name><sys_package display_value="Service Portal - Core" source="com.glide.service-portal">c1e598f84fb21200c664c0818110c74b</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_instance_5b3ff950d7000200a9ad1e173e24d4dd</sys_update_name><sys_updated_by>frank.schuster</sys_updated_by><sys_updated_on>2016-04-12 17:46:45</sys_updated_on><title>Barcode</title><url/><widget_parameters/></sp_instance></record_update>]]></payload>
+<remote_update_set display_value="Service Portal PayPal HackLab #2 - Widget">b7fd65704f361200c664c0818110c7aa</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>frank.schuster</sys_created_by>
+<sys_created_on>2016-04-12 22:29:05</sys_created_on>
+<sys_id>bbfd65704f361200c664c0818110c7aa</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>frank.schuster</sys_updated_by>
+<sys_updated_on>2016-04-12 22:29:05</sys_updated_on>
+<table/>
+<target_name>Barcode</target_name>
+<type>Instance</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_instance_ba4e2cf44ff21200c664c0818110c780</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>3</order><short_description/><size>md</size><sp_column display_value="2">a77f3d50d7000200a9ad1e173e24d488</sp_column><sp_widget display_value="PayPal Payment">ebc86cb44ff21200c664c0818110c719</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>frank.schuster</sys_created_by><sys_created_on>2016-04-12 17:50:45</sys_created_on><sys_customer_update>true</sys_customer_update><sys_id>ba4e2cf44ff21200c664c0818110c780</sys_id><sys_mod_count>1</sys_mod_count><sys_name>PayPal Payment</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_instance_ba4e2cf44ff21200c664c0818110c780</sys_update_name><sys_updated_by>frank.schuster</sys_updated_by><sys_updated_on>2016-04-12 17:51:19</sys_updated_on><title>PayPal Payment</title><url/><widget_parameters/></sp_instance></record_update>]]></payload>
+<remote_update_set display_value="Service Portal PayPal HackLab #2 - Widget">b7fd65704f361200c664c0818110c7aa</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>frank.schuster</sys_created_by>
+<sys_created_on>2016-04-12 22:29:05</sys_created_on>
+<sys_id>fbfd65704f361200c664c0818110c7aa</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>frank.schuster</sys_updated_by>
+<sys_updated_on>2016-04-12 22:29:05</sys_updated_on>
+<table/>
+<target_name>PayPal Payment</target_name>
 <type>Instance</type>
 <update_domain>global</update_domain>
 <update_set display_value=""/>
