@@ -33,6 +33,7 @@ function($scope, $window, spUtil, $rootScope, $uibModal) {
 					c.paymentStatus = "failed";
 				} else if(response.payPalStatus == "success") {
 					c.paymentStatus = "success";
+					c.data.showPayment = false;
 					setTimeout(function(){
 						c.modalInstance.close();
 					}, 3000);
