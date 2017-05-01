@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2017-05-01 22:06:02">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>@Author: Frank Schuster (ServiceNow)
+@Release Date: May, 1st 2017
+@Content:
+- PayPal Widget
+- PayPal Payment form (ng-template)</description>
+<inserted/>
+<name>Service Portal PayPal Widget</name>
+<origin_sys_id/>
+<release_date/>
+<remote_sys_id>9b6a8b90dbea720016d1d8c5ce961998</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>frank.schuster</sys_created_by>
+<sys_created_on>2017-05-01 22:06:01</sys_created_on>
+<sys_id>8e3b03d0dbea720016d1d8c5ce9619a5</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>frank.schuster</sys_updated_by>
+<sys_updated_on>2017-05-01 22:06:01</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_ng_template_cd4e9edcdb6a720016d1d8c5ce96198f</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_ng_template"&gt;&lt;sp_ng_template action="INSERT_OR_UPDATE"&gt;&lt;id&gt;paymentModal&lt;/id&gt;&lt;sp_widget display_value="PayPal Payment"&gt;6d88f2eedb5e7e0078a3d311ce9619d4&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_ng_template&lt;/sys_class_name&gt;&lt;sys_created_by&gt;frank.schuster&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2017-05-01 18:49:47&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;cd4e9edcdb6a720016d1d8c5ce96198f&lt;/sys_id&gt;&lt;sys_mod_count&gt;17&lt;/sys_mod_count&gt;&lt;sys_name&gt;paymentModal&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_ng_template_cd4e9edcdb6a720016d1d8c5ce96198f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;frank.schuster&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2017-05-01 22:05:11&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+  &lt;div class="panel panel-default equal-height-column"&gt;
+    &lt;div class="panel-heading"&gt;
+      &lt;h3 class="panel-title"&gt;&lt;i class="fa fa-credit-card"&gt;&lt;/i&gt; ${Safe Credit Card Payment powered by}&lt;/h3&gt;
+      &lt;img class="img-responsive panel-title-image paypal-logo" src="accepted-cards.png" /&gt;
+    &lt;/div&gt;
+
+    &lt;div class="panel-body"&gt;
+      &lt;div id="paymentFailed" class="alert alert-danger" role="alert" ng-if="c.paymentStatus == 'failed'"&gt;
+        &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;    
+          &lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;
+        &lt;/button&gt; 
+        &lt;strong&gt;${Warning!}&lt;/strong&gt; ${Payment couldn't be completed successfully. Please try again.}
+      &lt;/div&gt;
+
+      &lt;div id="paymentSuccess" class="alert alert-success" role="alert" ng-if="c.paymentStatus == 'success'"&gt;
+        &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;    
+          &lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;
+        &lt;/button&gt; 
+        &lt;strong&gt;${Thank you!}&lt;/strong&gt; ${We have received your payment, this window will automatically close in 3 seconds.}
+      &lt;/div&gt;
+
+
+      &lt;form id="payment-form" name="payment" ng-submit="c.payNow(payment.$valid)" novalidate&gt;
+
+        &lt;div class="row"&gt;
+          &lt;div class="col-xs-12"&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label class="control-label" for="cardNumber"&gt;${Credit Card Type} &lt;/label&gt;
+              &lt;div class="input-group"&gt;
+                &lt;select class="form-control" id="credit_card_type" name="credit_card_type" ng-model="c.data.credit_card_type" ng-required="true"&gt;
+                  &lt;option value="" disabled selected&gt;${Choose your credit card type.}&lt;/option&gt;
+                  &lt;option value="mastercard"&gt;${MasterCard}&lt;/option&gt;
+                  &lt;option value="visa"&gt;${VISA}&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;div ng-class="{ 'has-error has-feedback' : payment.credit_card_type.$invalid &amp;&amp; c.submitted}"&gt;
+                  &lt;p ng-show="payment.credit_card_type.$invalid &amp;&amp; c.submitted" class="help-block" &gt;${Credit Card Type is mandatory.}&lt;/p&gt; 
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-xs-6"&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label class="control-label" for="first_name"&gt;${First name}&lt;/label&gt;  
+              &lt;input id="first_name" ng-model="c.data.first_name" name="first_name" type="text" placeholder="Frank" class="form-control input-md" ng-required="true"&gt;
+              &lt;div ng-class="{ 'has-error has-feedback' : payment.first_name.$invalid &amp;&amp; c.submitted}"&gt;
+                &lt;p ng-show="payment.first_name.$invalid &amp;&amp; c.submitted" class="help-block" &gt;${First Name is mandatory.}&lt;/p&gt; 
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="col-xs-6 pull-right"&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label class="control-label" for="last_name"&gt;${Last name}&lt;/label&gt;  
+              &lt;input id="last_name" ng-model="c.data.last_name" name="last_name" type="text" placeholder="Schuster" class="form-control input-md" ng-required="true"&gt;
+              &lt;div ng-class="{ 'has-error has-feedback' : payment.last_name.$invalid &amp;&amp; c.submitted}"&gt;
+                &lt;p ng-show="payment.last_name.$invalid &amp;&amp; c.submitted" class="help-block" &gt;${Last Name is mandatory.}&lt;/p&gt; 
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-xs-12"&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label class="control-label" for="cardNumber"&gt;${Card number} &lt;/label&gt;
+              &lt;div class="input-group"&gt;
+                &lt;input class="form-control" type="text" ng-model="c.data.credit_card_number" name="card_number" placeholder="Valid Card Number" id="card_number" ng-required="true" /&gt;
+                &lt;div class="input-group-addon"&gt;&lt;span&gt;&lt;i class="fa fa-credit-card"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;                         
+              &lt;/div&gt;
+              &lt;div ng-class="{ 'has-error has-feedback' : payment.card_number.$invalid &amp;&amp; c.submitted}"&gt;
+                &lt;p ng-show="payment.card_number.$invalid &amp;&amp; c.submitted" class="help-block" &gt;${Card Number is mandatory.}&lt;/p&gt; 
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-xs-6"&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label class="control-label" for="expiration"&gt;${Expires (Month)}&lt;/label&gt;  
+              &lt;input id="expiration" name="expiration" ng-model="c.data.expire_month" name="expiration" type="text" placeholder="12" class="form-control input-md" ng-required="true" &gt;
+              &lt;div ng-class="{ 'has-error has-feedback' : payment.expiration.$invalid &amp;&amp; c.submitted}"&gt;
+                &lt;p ng-show="payment.expiration.$invalid &amp;&amp; c.submitted" class="help-block" &gt;${Expiration Month is mandatory.}&lt;/p&gt; 
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="col-xs-6 pull-right"&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label class="control-label" for="expire_year"&gt;${Expires (Year)}&lt;/label&gt;  
+              &lt;input id="expire_year" name="expire_year" ng-model="c.data.expire_year" name="expire_year" type="text" placeholder="2019" class="form-control input-md" ng-required="true"&gt;
+              &lt;div ng-class="{ 'has-error has-feedback' : payment.expire_year.$invalid &amp;&amp; c.submitted}"&gt;
+                &lt;p ng-show="payment.expire_year.$invalid &amp;&amp; c.submitted" class="help-block" &gt;${Expiration Year is mandatory.}&lt;/p&gt; 
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-xs-12"&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label class="control-label" for="couponCode"&gt;${CVV2}&lt;/label&gt;
+              &lt;input id="cvv" name="cvv" ng-model="c.data.cvv" type="text" placeholder="123" class="form-control input-md"&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-xs-12"&gt;
+            &lt;button class="btn btn-success btn-block btn-lg" ng-show="!loadingIndicator" ng-click="c.payNow()"&gt;${Pay NOW!}&lt;/button&gt;
+            &lt;div class="loading-spinner" ng-show="loadingIndicator"&gt;            
+              &lt;img src="portal-loading-spinner.svg" class="loading-spinner"/&gt;
+              &lt;span class="text-muted"&gt;${Authorizing the payment...}&lt;/span&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="panel-footer text-right"&gt;
+          &lt;button class="btn btn-primary" ng-click="c.closeModal()"&gt;${Cancel}&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  .panel-footer {
+    margin-top: 10px;
+  }
+  
+  .modal-content { 
+    border: 0px solid transparent; 
+  }
+  .vresize {
+    resize: vertical; 
+  }
+  .glyphicon {
+    font-size: 1.6em;
+  }
+  .credit-card-box .panel-title {
+    font-weight:bold;
+    overflow:hidden;
+  }
+
+  .credit-card-box .panel-title .panel-title-text {
+    max-width:80px;
+    float:left;
+  }
+
+  .credit-card-box .panel-title .panel-title-image {
+    max-width:160px;
+    float:right;
+  }
+
+  .credit-card-box label {
+    display:block;
+  }
+
+  .credit-card-box .panel-body .control-label {
+    text-transform:uppercase;
+  }
+
+  .paypal-logo {
+    height: 100px;
+    width: auto;
+  }
+
+  .payment-details {
+    padding-top: 15px;
+  }
+
+  .loading-spinner {
+    height: 50px;
+    vertical-align: middle;
+  }
+
+&lt;/style&gt;]]&gt;&lt;/template&gt;&lt;/sp_ng_template&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="Service Portal PayPal Widget">8e3b03d0dbea720016d1d8c5ce9619a5</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>frank.schuster</sys_created_by>
+<sys_created_on>2017-05-01 22:06:01</sys_created_on>
+<sys_id>0a3b03d0dbea720016d1d8c5ce9619a6</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>frank.schuster</sys_updated_by>
+<sys_updated_on>2017-05-01 22:06:01</sys_updated_on>
+<table/>
+<target_name>paymentModal</target_name>
+<type>Angular ng-template</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_widget_6d88f2eedb5e7e0078a3d311ce9619d4</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;client_script&gt;&lt;![CDATA[function($scope, $window, spUtil, $rootScope, $uibModal) {
+	var c = this;	
+
+	$scope.loadingIndicator = $rootScope.loadingIndicator;
+
+	$scope.$on('sp_loading_indicator', function(e, value) {
+		$scope.loadingIndicator = value;
+	});
+
+	//using uibModal (UI Bootstrap) for displaying the modal
+	c.openPaymentModal = function() {
+		c.modalInstance = $uibModal.open({
+			templateUrl: 'paymentModal',
+			scope: $scope
+		});
+	};
+
+	c.closeModal = function() {
+		c.modalInstance.close();
+	};
+
+	c.payNow = function(isValid) {
+
+		//form is submitted, if there are any AngularJS validation errors they will now be displayed
+		c.submitted = true;
+		if(isValid) {
+
+			//setting an action variable is a good practice, if you have multiple functions on the server that you want to trigger individually
+			c.data.action = "make_payment";
+
+			c.server.update().then(function(response) {
+				if(response.payPalStatus == "failed") {
+					c.paymentStatus = "failed";
+				} else if(response.payPalStatus == "success") {
+					c.paymentStatus = "success";
+					c.data.showPayment = false;
+					setTimeout(function(){ 
+						c.modalInstance.close(); 
+					}, 3000);
+				}
+			});	
+
+		}
+	};
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;paypal_payment&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;PayPal Payment&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+
+	var gr = $sp.getRecord();
+	if (gr) {
+		data.table = gr.getTableName();
+		data.sys_id = gr.getUniqueValue();
+	}
+
+
+	/* 
+We only want to show the payment modal when the stage is "Payment Requested) 
+In order for this to work you will have to add a Stage with the value "payment_requested" to your Catalog Item workflow 
+*/
+	if(gr.getValue("stage") == "payment_requested") {
+		data.showPayment = true;	
+	} else {
+		data.showPayment = false;
+	}
+
+
+	//trigger this piece of code, only when the action variable is "make_payment"
+	if (input &amp;&amp; input.action == "make_payment" &amp;&amp; gr) {
+		try {
+
+			//$sp.log("parseFloat price is: " + parseFloat(gr.price.getReferenceValue()));
+			//getReferenceValue() on the price returns e.g. 1100.0000 for a $1,100.00USD price - use parseFloat for the PayPal API to work
+			var parsedPrice = parseFloat(gr.price.getReferenceValue());
+
+			//Build PayPal JSON payment object
+			var payment = {
+				"intent": "sale",
+				"payer": {
+				},
+				"transactions": [{
+					"amount": {
+						"currency": gr.price.getReferenceCurrencyCode(),
+						"total": parsedPrice						
+					},
+					"description": "ServiceNow Request for Company: " + gr.request.requested_for.company.getDisplayValue()
+				}]
+			};
+
+			var funding_instruments = [
+				{
+					"credit_card": {
+						"type": input.credit_card_type,
+						"number": input.credit_card_number,
+						"expire_month": input.expire_month,
+						"expire_year": input.expire_year,
+						"first_name": input.first_name,
+						"last_name": input.last_name,
+						"cvv2": input.cvv
+					}
+				}];
+			payment.payer.payment_method = 'credit_card';
+			payment.payer.funding_instruments = funding_instruments;		
+
+			/* 
+				Call the PayPal Sandbox Payment API for direct Credit Card payments
+				At first we will have to generate an OAuth token by using the PayPal OAuth API.
+			*/
+			var token = getPayPalToken();
+			//$sp.log("** Token returned from the getPayPalToken() method: " + token);
+
+			var sm = new sn_ws.RESTMessageV2();
+			sm.setEndpoint("https://api.sandbox.paypal.com/v1/payments/payment");
+			sm.setHttpMethod("post");
+			sm.setRequestHeader("Content-type","application/json");
+			sm.setRequestHeader("Authorization", "Bearer " + token);		
+			sm.setRequestBody(JSON.stringify(payment));
+
+			var response = sm.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();			
+
+			if(httpStatus == "201") {
+				data.payPalStatus = "success";
+				//populate Date/Time variable on the RITM that could eventually drive our Workflow
+				gr.u_payment_received = gs.nowDateTime(); 
+				gr.comments = "** Auto System Notification: Received " + gr.price.getReferenceCurrencyCode() + " " + gr.price.getReferenceValue() + " payment paid by Credit Card via PayPal.";
+				gr.update();
+				$sp.log("** Payment Notification - Payment completed, HTTP Status Code: " + httpStatus + "/ Body: " + responseBody);
+			} else {
+				data.payPalStatus = "failed";
+				$sp.log("** Payment Notification - Payment failed, HTTP Status Code: " + httpStatus + "/ Body: " + responseBody);
+			}
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			$sp.log("** Caught an exception within the PayPal payment block: " + message);
+		}
+	}
+
+
+	function getPayPalToken() {
+		try {
+			/*
+			Generate OAuth token by using the ClientID &amp; Secret from the PayPal app.			
+		*/
+			var sm = new sn_ws.RESTMessageV2();
+			sm.setEndpoint("https://api.sandbox.paypal.com/v1/oauth2/token");
+			sm.setHttpMethod("post");
+			sm.setRequestHeader("Accept","application/json");
+			sm.setRequestHeader("Accept-Language", "en_US");
+			//@setBasicAuth: values are coming from the PayPal App: Client ID,Secret
+			sm.setBasicAuth("AaRUqMvjYBZ1FE8dEt2mamy3WlHaZJU4SRehZGkv3A46tSPND2A2EvS5Ceg6JaOHfNYWKhevLMXVPy9B","EHgHpMx3HTzgZOf4mG_WU_tPTHdosgkOSDoSgwMQgUwqg6ChFPdRRns-SP3KZpzc1uzOEQoTONEUVXid");
+			sm.setRequestBody("grant_type=client_credentials");
+
+			var response = sm.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+
+			var accessIndex = responseBody.indexOf("access_token");
+
+			//OAuth token is 98 chars long - we have to add the 15 chars from the access_token string (@TODO: create more dynamic substring with RegEx)
+			var token = responseBody.substring(accessIndex+15, accessIndex+112);
+			return token;
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			$sp.log("** Caught an exception within the PayPal token block: " + message);
+		}
+	}
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;frank.schuster&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2017-04-26 10:14:58&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;6d88f2eedb5e7e0078a3d311ce9619d4&lt;/sys_id&gt;&lt;sys_mod_count&gt;94&lt;/sys_mod_count&gt;&lt;sys_name&gt;PayPal Payment&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_6d88f2eedb5e7e0078a3d311ce9619d4&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;frank.schuster&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2017-05-01 22:04:33&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;!-- only show the payment modal when the stage is "Payment requested" (payment_requested) - value is set in the server script --&gt;
+&lt;div ng-if="data.showPayment"&gt;
+  &lt;div class="panel b" &gt;
+    &lt;div class="panel-heading bg-primary"&gt;      
+      &lt;span&gt;${Make a Payment}&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Payment button, triggers the Payment modal --&gt;
+    &lt;div class="panel-body" style="text-align:center"&gt;          
+      &lt;button type="button" class="btn btn-success btn-lg" ng-click="c.openPaymentModal()"&gt;${PayNow}&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;  
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="Service Portal PayPal Widget">8e3b03d0dbea720016d1d8c5ce9619a5</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>frank.schuster</sys_created_by>
+<sys_created_on>2017-05-01 22:06:01</sys_created_on>
+<sys_id>ca3b03d0dbea720016d1d8c5ce9619a6</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>frank.schuster</sys_updated_by>
+<sys_updated_on>2017-05-01 22:06:01</sys_updated_on>
+<table/>
+<target_name>PayPal Payment</target_name>
+<type>Widget</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
