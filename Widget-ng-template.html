@@ -1,0 +1,173 @@
+<div>
+<div class="panel panel-default equal-height-column">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-credit-card"></i> ${Safe Credit Card Payment powered by}</h3>
+    <img class="img-responsive panel-title-image paypal-logo" src="accepted-cards.png" />
+  </div>
+
+  <div class="panel-body">
+    <div id="paymentFailed" class="alert alert-danger" role="alert" ng-if="c.paymentStatus == 'failed'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>${Warning!}</strong> ${Payment couldn't be completed successfully. Please try again.}
+    </div>
+
+    <div id="paymentSuccess" class="alert alert-success" role="alert" ng-if="c.paymentStatus == 'success'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button> 
+      <strong>${Thank you!}</strong> ${We have received your payment, this window will automatically close in 3 seconds.}
+    </div>
+
+
+    <form id="payment-form" name="payment" ng-submit="c.payNow(payment.$valid)" novalidate>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="control-label" for="cardNumber">${Credit Card Type} </label>
+            <div class="input-group">
+              <select class="form-control" id="credit_card_type" name="credit_card_type" ng-model="c.data.credit_card_type" ng-required="true">
+                <option value="" disabled selected>${Choose your credit card type.}</option>
+                <option value="mastercard">${MasterCard}</option>
+                <option value="visa">${VISA}</option>
+              </select>
+              <div ng-class="{ 'has-error has-feedback' : payment.credit_card_type.$invalid && c.submitted}">
+                <p ng-show="payment.credit_card_type.$invalid && c.submitted" class="help-block" >${Credit Card Type is mandatory.}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="control-label" for="first_name">${First name}</label>
+            <input id="first_name" ng-model="c.data.first_name" name="first_name" type="text" placeholder="Frank" class="form-control input-md" ng-required="true">
+            <div ng-class="{ 'has-error has-feedback' : payment.first_name.$invalid && c.submitted}">
+              <p ng-show="payment.first_name.$invalid && c.submitted" class="help-block" >${First Name is mandatory.}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 pull-right">
+          <div class="form-group">
+            <label class="control-label" for="last_name">${Last name}</label>
+            <input id="last_name" ng-model="c.data.last_name" name="last_name" type="text" placeholder="Schuster" class="form-control input-md" ng-required="true">
+            <div ng-class="{ 'has-error has-feedback' : payment.last_name.$invalid && c.submitted}">
+              <p ng-show="payment.last_name.$invalid && c.submitted" class="help-block" >${Last Name is mandatory.}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="control-label" for="cardNumber">${Card number} </label>
+            <div class="input-group">
+              <input class="form-control" type="text" ng-model="c.data.credit_card_number" name="card_number" placeholder="Valid Card Number" id="card_number" ng-required="true" />
+              <div class="input-group-addon"><span><i class="fa fa-credit-card"></i></span></div>
+            </div>
+            <div ng-class="{ 'has-error has-feedback' : payment.card_number.$invalid && c.submitted}">
+              <p ng-show="payment.card_number.$invalid && c.submitted" class="help-block" >${Card Number is mandatory.}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="control-label" for="expiration">Expires (Month)</label>
+            <input id="expiration" name="expiration" ng-model="c.data.expire_month" name="expiration" type="text" placeholder="12" class="form-control input-md" ng-required="true" >
+            <div ng-class="{ 'has-error has-feedback' : payment.expiration.$invalid && c.submitted}">
+              <p ng-show="payment.expiration.$invalid && c.submitted" class="help-block" >${Expiration Month is mandatory.}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 pull-right">
+          <div class="form-group">
+            <label class="control-label" for="expire_year">Expires (Year)</label>
+            <input id="expire_year" name="expire_year" ng-model="c.data.expire_year" name="expire_year" type="text" placeholder="2019" class="form-control input-md" ng-required="true">
+            <div ng-class="{ 'has-error has-feedback' : payment.expire_year.$invalid && c.submitted}">
+              <p ng-show="payment.expire_year.$invalid && c.submitted" class="help-block" >${Expiration Year is mandatory.}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="control-label" for="couponCode">CVV2</label>
+            <input id="cvv" name="cvv" ng-model="c.data.cvv" type="text" placeholder="123" class="form-control input-md">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-success btn-block btn-lg" ng-show="!loadingIndicator" ng-click="c.payNow()">${Pay NOW!}</button>
+          <div class="loading-spinner" ng-show="loadingIndicator">
+            <img src="portal-loading-spinner.svg" class="loading-spinner"/>
+            <span class="text-muted">${Authorizing the payment...}</span>
+          </div>
+
+        </div>
+      </div>
+      <div class="panel-footer text-right">
+        <button class="btn btn-primary" ng-click="c.closeModal()">${Cancel}</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+<style>
+.panel-footer {
+  margin-top: 10px;
+}
+
+.modal-content {
+  border: 0px solid transparent;
+}
+.vresize {
+  resize: vertical;
+}
+.glyphicon {
+  font-size: 1.6em;
+}
+.credit-card-box .panel-title {
+  font-weight:bold;
+  overflow:hidden;
+}
+
+.credit-card-box .panel-title .panel-title-text {
+  max-width:80px;
+  float:left;
+}
+
+.credit-card-box .panel-title .panel-title-image {
+  max-width:160px;
+  float:right;
+}
+
+.credit-card-box label {
+  display:block;
+}
+
+.credit-card-box .panel-body .control-label {
+  text-transform:uppercase;
+}
+
+.paypal-logo {
+  height: 100px;
+  width: auto;
+}
+
+.payment-details {
+  padding-top: 15px;
+}
+
+.loading-spinner {
+  height: 50px;
+  vertical-align: middle;
+}
+
+</style>
